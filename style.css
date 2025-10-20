@@ -1,0 +1,74 @@
+/* Body and background */
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  background: linear-gradient(135deg, #2b0057, #4b0082, #8a2be2, #c77dff);
+  background-size: 400% 400%;
+  animation: gradientShift 10s ease infinite;
+  overflow: hidden;
+  color: #fff;
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Heading */
+h1 {
+  font-size: 3em;
+  text-shadow: 0 0 20px #ffd700, 0 0 40px #ff8c00;
+  animation: glow 2s infinite alternate;
+  margin-bottom: 10px;
+}
+
+@keyframes glow {
+  from { text-shadow: 0 0 10px #ffcc00; }
+  to { text-shadow: 0 0 30px #ffa500, 0 0 60px #ff4500; }
+}
+
+/* Quote / wish */
+.wish {
+  margin-top: 10px;
+  font-size: 1.5em;
+  color: #ffd700;
+  animation: fadeIn 3s ease-in;
+  max-width: 80%;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Rangoli design */
+.rangoli {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 150px;
+  background: radial-gradient(circle at center, #ff69b4, #ffcc00, #00ffff);
+  clip-path: polygon(
+    50% 0%, 55% 10%, 65% 10%, 60% 20%, 70% 30%, 60% 40%, 65% 50%,
+    50% 45%, 35% 50%, 40% 40%, 30% 30%, 40% 20%, 35% 10%, 45% 10%
+  );
+  filter: blur(15px);
+  opacity: 0.7;
+  z-index: 0;
+}
+
+/* Fireworks canvas */
+canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
